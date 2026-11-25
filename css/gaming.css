@@ -461,6 +461,37 @@ p {
 }
 
 /* =========================
+   Trade In
+========================= */
+
+.trade-in {
+    padding-block: var(--section-spacing);
+    background-color: var(--surface-secondary);
+}
+
+.trade-in h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.trade-in p:not(.eyebrow) {
+    max-width: 550px;
+    margin-bottom: 1.5rem;
+}
+
+.trade-in-image {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.trade-in-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* =========================
    Find Us
 ========================= */
 
