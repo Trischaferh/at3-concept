@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The Daily Grind - your neighbourhood café for good coffee, fresh food and good company.">
+
+    <title>The Daily Grind | Neighbourhood Café</title>
+
+    <!-- Shared Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/switcher.css">
+
+    <!-- Café Styles -->
+    <link rel="stylesheet" href="../css/cafe.css">
+</head>
+
+<body>
+
+    <!-- ========== Header ========== -->
+
+    <header class="site-header">
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container">
+
+                <!-- Logo -->
+                <a href="#home" class="site-logo navbar-brand">
+                    <span>THE DAILY</span>
+                    <span>GRIND</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation"
+                    aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse" id="main-navigation">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#story">Our Story</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#favourites">Our Favourites</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#coffee">Coffee</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">Our Menu</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#find-us">Find Us</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Site Switcher Button -->
+                <button class="switcher-button" popovertarget="site-switcher-panel">
+                    Switch Site
+                </button>
+
+                <!-- Site Switcher Popover -->
+                <nav id="site-switcher-panel" class="switcher-panel" popover aria-label="Explore other websites">
+
+                    <p>Switch between experiences</p>
+
+                    <a href="../cafe/index.html" aria-current="page">
+                        ☕ The Daily Grind
+                    </a>
+
+                    <a href="../music/index.html">
+                        💿 The Record Room
+                    </a>
+
+                    <a href="../gaming/index.html">
+                        🎮 Pixel Palace
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- ========== Hero ========== -->
+
+        <section class="hero" id="home">
+
+            <div class="container">
+
+                <p class="eyebrow">Your neighbourhood café</p>
+
+                <h1>
+                    Good coffee. Good food. Good company.
+                </h1>
+
+                <p>
+                    A welcoming neighbourhood spot serving fresh
+                    coffee, delicious food and a little everyday
+                    happiness.
+                </p>
+
+                <a href="#favourites" class="button">
+                    Explore our favourites
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- ========== Our Story ========== -->
+
+        <section class="introduction" id="story">
+
+            <div class="container">
+
+                <div class="introduction-content">
+
+                    <p class="eyebrow">A little about us</p>
+
+                    <h2>A little place to feel at home.</h2>
+
+                    <p>
+                        At The Daily Grind, we believe the best days often
+                        start with a good coffee and a friendly face.
+                        We're a neighbourhood café passionate about freshly
+                        prepared food, carefully made coffee and creating
+                        a place where everyone feels welcome.
+                    </p>
+
+                    <p>
+                        Whether you're dropping in on your morning commute,
+                        meeting friends for lunch or taking a little time
+                        for yourself, we'd love to make your day a bit better.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== Favourites ========== -->
+
+        <section class="favourites-section" id="favourites">
+
+            <div class="container">
+
+                <p class="eyebrow">A little something for everyone</p>
+
+                <h2>Our favourites.</h2>
+
+                <p class="section-intro">
+                    Some of the things we're known for.
+                </p>
+
+
+                <!--
+                    The featured-grid is a CSS Grid layout.
+
+                    Its parent .container is the named container
+                    called "favourites".
+
+                    This allows the grid to respond to the width
+                    of its own section rather than the viewport.
+                -->
+                <div class="featured-grid">
+
+                    <article class="featured-card">
+
+                        <div class="featured-image">
+                            <!-- Food image will go here -->
+                        </div>
+
+                        <div class="featured-details">
+
+                            <h3>Ham &amp; Cheese Toastie</h3>
+
+                            <p>
+                                Toasted sourdough with ham and
+                                melted cheese.
+                            </p>
+
+                            <span class="featured-price">$12.00</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="featured-card">
+
+                        <div class="featured-image">
+                            <!-- Food image will go here -->
+                        </div>
+
+                        <div class="featured-details">
+
+                            <h3>Almond Croissant</h3>
+
+                            <p>
+                                Flaky pastry filled with almond cream.
+                            </p>
+
+                            <span class="featured-price">$7.00</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="featured-card">
+
+                        <div class="featured-image">
+                            <!-- Food image will go here -->
+                        </div>
+
+                        <div class="featured-details">
+
+                            <h3>Banana Bread</h3>
+
+                            <p>
+                                House-made and served lightly toasted.
+                            </p>
+
+                            <span class="featured-price">$6.50</span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== Coffee ========== -->
+
+        <section class="coffee-section" id="coffee">
+
+            <div class="container">
+
+                <p class="eyebrow">Freshly brewed</p>
+
+                <h2>Good things start with coffee.</h2>
+
+                <p class="section-intro">
+                    Carefully prepared coffee, made just the way
+                    you like it.
+                </p>
+
+
+                <!--
+                    The coffee-grid has its own named container.
+
+                    It uses the same container-query approach as
+                    the favourites section, but has a separate
+                    container name.
+                -->
+                <div class="coffee-grid">
+
+                    <article class="coffee-card">
+
+                        <div class="coffee-image">
+                            <!-- Coffee image will go here -->
+                        </div>
+
+                        <div class="coffee-details">
+
+                            <h3>Flat White</h3>
+
+                            <p>
+                                Smooth espresso with silky steamed milk.
+                            </p>
+
+                            <span class="coffee-price">$5.00</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="coffee-card">
+
+                        <div class="coffee-image">
+                            <!-- Coffee image will go here -->
+                        </div>
+
+                        <div class="coffee-details">
+
+                            <h3>Cappuccino</h3>
+
+                            <p>
+                                Rich espresso topped with steamed milk
+                                and a soft layer of foam.
+                            </p>
+
+                            <span class="coffee-price">$5.50</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="coffee-card">
+
+                        <div class="coffee-image">
+                            <!-- Coffee image will go here -->
+                        </div>
+
+                        <div class="coffee-details">
+
+                            <h3>Iced Latte</h3>
+
+                            <p>
+                                Chilled espresso and milk served over ice.
+                            </p>
+
+                            <span class="coffee-price">$6.50</span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== Full Menu ========== -->
+
+        <section class="menu-section" id="menu">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">Something for every taste</span>
+
+                    <h2>Our Menu.</h2>
+
+                    <p class="section-intro">
+                        From a quick morning coffee to a relaxed lunch,
+                        there's something waiting for you.
+                    </p>
+
+                </div>
+
+                <div class="menu-grid">
+
+                    <!-- Breakfast & Light Bites -->
+                    <div class="menu-category">
+
+                        <h3>Breakfast &amp; Light Bites</h3>
+
+                        <ul class="menu-list">
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Ham &amp; Cheese Toastie</h4>
+                                    <p>Toasted sourdough with ham and melted cheese.</p>
+                                </div>
+                                <span class="menu-price">$12.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Avocado Toast</h4>
+                                    <p>Smashed avocado on toasted sourdough.</p>
+                                </div>
+                                <span class="menu-price">$13.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Smashed Eggs on Sourdough</h4>
+                                    <p>Two eggs served on freshly toasted sourdough.</p>
+                                </div>
+                                <span class="menu-price">$14.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Almond Croissant</h4>
+                                    <p>Flaky pastry filled with almond cream.</p>
+                                </div>
+                                <span class="menu-price">$7.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Banana Bread</h4>
+                                    <p>House-made and served lightly toasted.</p>
+                                </div>
+                                <span class="menu-price">$6.50</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!-- Lunch & Sandwiches -->
+                    <div class="menu-category">
+
+                        <h3>Lunch &amp; Sandwiches</h3>
+
+                        <ul class="menu-list">
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Chicken &amp; Avocado Sandwich</h4>
+                                    <p>Grilled chicken, avocado and fresh greens.</p>
+                                </div>
+                                <span class="menu-price">$15.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Roast Vegetable Wrap</h4>
+                                    <p>Seasonal roasted vegetables with house dressing.</p>
+                                </div>
+                                <span class="menu-price">$13.50</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Classic BLT</h4>
+                                    <p>Bacon, lettuce and tomato on toasted bread.</p>
+                                </div>
+                                <span class="menu-price">$14.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Grilled Chicken Salad</h4>
+                                    <p>Grilled chicken with crisp seasonal greens.</p>
+                                </div>
+                                <span class="menu-price">$16.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Ham &amp; Swiss Panini</h4>
+                                    <p>Ham and Swiss cheese in toasted panini bread.</p>
+                                </div>
+                                <span class="menu-price">$14.50</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!-- Coffee & Drinks -->
+                    <div class="menu-category">
+
+                        <h3>Coffee &amp; Drinks</h3>
+
+                        <ul class="menu-list">
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Flat White</h4>
+                                    <p>Rich espresso with silky steamed milk.</p>
+                                </div>
+                                <span class="menu-price">$5.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Cappuccino</h4>
+                                    <p>Espresso, steamed milk and a layer of foam.</p>
+                                </div>
+                                <span class="menu-price">$5.50</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Iced Latte</h4>
+                                    <p>Espresso and chilled milk over ice.</p>
+                                </div>
+                                <span class="menu-price">$6.50</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Long Black</h4>
+                                    <p>Bold espresso topped with hot water.</p>
+                                </div>
+                                <span class="menu-price">$4.50</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Hot Chocolate</h4>
+                                    <p>Rich chocolate blended with steamed milk.</p>
+                                </div>
+                                <span class="menu-price">$5.50</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!-- Something Sweet -->
+                    <div class="menu-category">
+
+                        <h3>Something Sweet</h3>
+
+                        <ul class="menu-list">
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Blueberry Muffin</h4>
+                                    <p>Soft, freshly baked muffin with blueberries.</p>
+                                </div>
+                                <span class="menu-price">$6.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Chocolate Brownie</h4>
+                                    <p>Rich chocolate brownie with a fudgy centre.</p>
+                                </div>
+                                <span class="menu-price">$6.50</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Carrot Cake</h4>
+                                    <p>Spiced carrot cake with cream cheese icing.</p>
+                                </div>
+                                <span class="menu-price">$7.00</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Lemon Slice</h4>
+                                    <p>Sweet and tangy lemon slice with a buttery base.</p>
+                                </div>
+                                <span class="menu-price">$5.50</span>
+                            </li>
+
+                            <li class="menu-item">
+                                <div class="menu-item-details">
+                                    <h4>Chocolate Chip Cookie</h4>
+                                    <p>Classic cookie packed with chocolate chips.</p>
+                                </div>
+                                <span class="menu-price">$4.50</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========== Find Us ========== -->
+
+        <section class="find-us-section" id="find-us">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Come on in</p>
+                    <h2>We'd love to see you.</h2>
+                    <p class="section-intro">
+                        Your neighbourhood coffee spot, right in the
+                        heart of Perth. Drop by for a coffee, a bite
+                        to eat or a little time out of your day.
+                    </p>
+                </div>
+
+                <div class="find-us-content">
+
+                    <!-- Café Exterior -->
+                    <div class="find-us-details">
+
+                        <div class="find-us-image">
+                            <!-- Café exterior photograph will go here -->
+                        </div>
+
+                        <div class="find-us-information">
+
+                            <h3>Find The Daily Grind</h3>
+
+                            <p>
+                                Perth CBD,<br>
+                                Perth WA 6000
+                            </p>
+
+                            <h3>Opening Hours</h3>
+
+                            <p>
+                                Monday – Sunday<br>
+                                7:00 am – 3:00 pm
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Google Map -->
+                    <div class="find-us-map">
+
+                        <iframe src="https://www.google.com/maps?q=Perth+CBD,+Perth+WA+6000&output=embed"
+                            title="Map showing Perth CBD" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========== Footer ========== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 The Daily Grind.
+                Good coffee, good company.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

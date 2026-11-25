@@ -1,0 +1,493 @@
+
+/* =========================
+   1. CSS Variables & Theme
+========================= */
+
+:root {
+    color-scheme: dark;
+
+    /* Colours */
+    --page-background: light-dark(#E8EDF1, #182432);
+    --surface-background: light-dark(#F5F7F8, #263746);
+    --surface-secondary: light-dark(#D8E0E6, #34495B);
+
+    --text-primary: light-dark(#202B35, #EDF2F5);
+    --text-secondary: light-dark(#64717C, #B4C0C9);
+
+    --accent: light-dark(#A65F36, #D99A68);
+    --accent-hover: light-dark(#874725, #E6AD80);
+
+    --border: light-dark(#CBD4DC, #45596A);
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --content-width: 1200px;
+    --section-spacing: clamp(2rem, 4vw, 3rem);
+}
+
+/* Light theme */
+:root[data-theme="light"] {
+    color-scheme: light;
+}
+
+
+/* =========================
+   2. Reset & Base Styles
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--page-background);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   3. Typography
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.75rem, 6vw, 5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* =========================
+   Shared Buttons
+========================= */
+
+.button {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background-color: var(--accent);
+    color: #182432;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    border-color: var(--accent-hover);
+    background-color: var(--accent-hover);
+    color: #182432;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   4. Header & Navigation
+========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--surface-background);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Branding */
+
+.site-logo {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.site-logo:hover {
+    color: var(--accent);
+}
+
+/* Main Navigation */
+
+.site-header .navbar {
+    padding-block: 1rem;
+}
+
+.site-header .navbar-nav {
+    gap: 0.35rem;
+}
+
+.site-header .nav-link {
+    padding: 0.65rem 0.85rem;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link[aria-current="page"] {
+    background-color: var(--surface-secondary);
+    color: var(--text-primary);
+}
+
+.site-header .nav-link[aria-current="page"] {
+    font-weight: 700;
+}
+
+/* Inactive Navigation Link */
+
+.site-header .nav-inactive {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Theme Toggle */
+
+.theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-inline: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--surface-secondary);
+}
+
+/* Mobile Navigation Toggle */
+
+.site-header .navbar-toggler {
+    border-color: var(--border);
+}
+
+.site-header .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgb(146 112 63 / 20%);
+}
+
+
+/* =========================
+   5. Shared Section Spacing
+========================= */
+
+.featured-news,
+.new-arrivals,
+.upcoming-reissues {
+    padding-top: 0;
+    padding-bottom: var(--section-spacing);
+}
+
+.featured-news {
+    padding-top: var(--section-spacing);
+}
+
+
+/* =========================
+   6. Hero
+========================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 620px;
+    padding-block: var(--section-spacing);
+    background-color: var(--surface-secondary);
+}
+
+
+.hero .eyebrow {
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin-bottom: 1.5rem;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    letter-spacing: -0.07em;
+    line-height: 0.95;
+}
+
+.hero-description {
+    max-width: 550px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =========================
+   7. Featured News
+========================= */
+
+/* Section Headings */
+
+.section-heading {
+    margin-bottom: 2rem;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 0.5rem;
+}
+
+.section-heading h2 {
+    margin-bottom: 0.5rem;
+}
+
+.section-heading > p:last-child {
+    margin-bottom: 0;
+}
+
+/* Featured News Card */
+
+.featured-news-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+    overflow: hidden;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface-background);
+}
+
+.featured-news-image {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background-color: var(--surface-secondary);
+}
+
+.featured-news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-date {
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.featured-news-content h3 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    letter-spacing: -0.04em;
+}
+
+.featured-news-content > p:not(.news-date) {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.news-link {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.news-link:hover {
+    color: var(--accent-hover);
+}
+
+
+/* =========================
+   8. New Arrivals
+========================= */
+
+/* Product Card */
+
+.product-card {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface-background);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgb(0 0 0 / 18%);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.product-card-content {
+    padding: 1.25rem;
+}
+
+.product-card-content h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.15rem;
+}
+
+.product-card-content p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.product-card-content .product-price {
+    margin-top: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.new-arrivals .button {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background-color: var(--accent);
+    color: #182432;
+    font-weight: 700;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.new-arrivals .button:hover {
+    border-color: var(--accent-hover);
+    background-color: var(--accent-hover);
+    color: #182432;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   9. Upcoming Reissues
+========================= */
+
+/* Upcoming Card */
+
+.upcoming-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--page-background);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.upcoming-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.upcoming-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.upcoming-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
+}
+
+.upcoming-card-content h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.upcoming-card-content p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.upcoming-release-date {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.4rem 0.7rem;
+    border-left: 3px solid var(--accent);
+    background-color: var(--surface-secondary);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================
+   10. Footer
+========================= */
+
+.site-footer {
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--border);
+    background-color: var(--surface-background);
+}
+
+.site-footer p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    text-align: center;
+}

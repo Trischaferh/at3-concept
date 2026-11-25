@@ -1,0 +1,760 @@
+
+/* =========================
+   Cafe Variables
+========================= */
+
+:root {
+    --cafe-background: #f3efe5;
+    --cafe-surface: #e4e6d9;
+    --cafe-accent: #75866a;
+    --cafe-highlight: #c47b55;
+    --cafe-text: #353e32;
+    --cafe-muted: #77796f;
+
+    --cafe-heading-font: Georgia, serif;
+    --cafe-body-font: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   Base Styles
+========================= */
+
+body {
+    background-color: var(--cafe-background);
+    color: var(--cafe-text);
+    font-family: var(--cafe-body-font);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--cafe-heading-font);
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.site-header {
+    background-color: var(--cafe-background);
+    border-bottom: 1px solid rgb(53 62 50 / 12%);
+}
+
+.site-header .navbar {
+    padding: 1.5rem 0;
+}
+
+.site-header .navbar .container {
+    gap: 1.5rem;
+}
+
+
+
+/* =========================
+   Logo
+========================= */
+
+.site-logo {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--cafe-heading-font);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    text-decoration: none;
+}
+
+
+/* =========================
+   Main Navigation
+========================= */
+
+.site-header .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+    color: var(--cafe-accent);
+}
+
+
+
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+    padding: 7rem 0;
+    text-align: center;
+}
+
+.hero .container {
+    width: min(100% - 3rem, 1100px);
+    max-width: 1100px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin: 1rem 0 1.5rem;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero .eyebrow {
+    color: var(--cafe-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.hero .button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.85rem 1.75rem;
+    background-color: var(--cafe-accent);
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.hero .button:hover {
+    background-color: var(--cafe-highlight);
+}
+
+
+/* =========================
+   Modern CSS: contrast-color()
+========================= */
+
+@supports (color: contrast-color(#000)) {
+    .hero .button {
+        color: contrast-color(var(--cafe-accent));
+    }
+}
+
+
+/* =========================
+   Introduction
+========================= */
+
+.introduction {
+    padding: 6rem 0;
+    background-color: var(--cafe-surface);
+    text-align: center;
+}
+
+.introduction .container {
+    width: min(100% - 3rem, 750px);
+    max-width: 750px;
+}
+
+.introduction h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.25rem;
+}
+
+.introduction-content > p:not(.eyebrow) {
+    font-size: 1.1rem;
+    color: var(--cafe-muted);
+}
+
+
+/* =========================
+   Favourites Section
+========================= */
+
+.favourites-section {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.favourites-section .container {
+    width: min(100% - 3rem, 1200px);
+    max-width: 1200px;
+}
+
+.favourites-section h2,
+.coffee-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.eyebrow {
+    color: var(--cafe-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.section-intro {
+    color: var(--cafe-muted);
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   Modern CSS: Container Queries
+========================= */
+
+/*
+   Container queries allow an element's descendants to respond
+   to the size of their containing element, rather than the
+   size of the browser viewport.
+
+   This is useful for reusable components because a component
+   can adapt to the space actually available to it.
+
+   container-type: inline-size establishes a query container
+   based on its available inline (usually horizontal) size.
+
+   We apply it to the section containers, not the grids
+   themselves. This allows the grids inside them to respond
+   to the container's width.
+
+   The container-name property gives each container a name,
+   allowing us to target it specifically in @container rules.
+*/
+
+.favourites-section .container {
+    container-type: inline-size;
+    container-name: favourites;
+}
+
+.coffee-section .container {
+    container-type: inline-size;
+    container-name: coffee;
+}
+
+
+/* =========================
+   Featured and Coffee Grids
+========================= */
+
+.featured-grid,
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+
+/* =========================
+   Modern CSS: Container Query Layouts
+========================= */
+
+/*
+   These queries check the width of the named section containers.
+
+   When the available width drops below 750px, the cards change
+   from three columns to two.
+
+   When it drops below 500px, the cards change to one column.
+
+   Notice that we are changing the grid layout, not the viewport.
+   This means the same component can adapt if it is placed inside
+   a narrower layout elsewhere on the page.
+
+   This replaces the previous media queries that used
+   @media (max-width: 800px) and @media (max-width: 550px).
+*/
+
+@container favourites (max-width: 750px) {
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container favourites (max-width: 500px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@container coffee (max-width: 750px) {
+    .coffee-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container coffee (max-width: 500px) {
+    .coffee-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   Featured and Coffee Cards
+========================= */
+
+.featured-card,
+.coffee-card {
+    background-color: #fffdf8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgb(53 62 50 / 8%);
+    text-align: left;
+}
+
+.featured-image,
+.coffee-image {
+    height: 220px;
+    background-color: var(--cafe-surface);
+}
+
+.featured-details,
+.coffee-details {
+    padding: 1.5rem;
+}
+
+.featured-details h3,
+.coffee-details h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-details p,
+.coffee-details p {
+    color: var(--cafe-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.featured-price,
+.coffee-price {
+    display: block;
+    color: var(--cafe-accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   Modern CSS: Scroll-driven Animations
+========================= */
+
+/*
+   Scroll-driven animations allow an animation to be linked
+   directly to the user's scrolling progress.
+
+   Unlike a traditional animation that runs according to time,
+   a scroll-driven animation progresses as an element moves
+   through the visible scroll area.
+
+   The view() function creates a view progress timeline for
+   the element being animated.
+
+   animation-range controls the portion of that timeline
+   during which the animation takes place.
+
+   Here, the cards fade in and move upwards as they enter
+   the viewport.
+
+   The animation is placed inside @supports so browsers that
+   do not understand animation-timeline simply retain the
+   normal, visible card styling above.
+
+   This is progressive enhancement: the page remains usable
+   without the animation.
+*/
+
+@keyframes reveal-card {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    .featured-card,
+    .coffee-card {
+        animation: reveal-card linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 40%;
+    }
+}
+
+/* =========================
+   Menu Button
+========================= */
+
+.menu-button {
+    margin-top: 3rem;
+    padding: 0.85rem 1.75rem;
+    background-color: transparent;
+    color: var(--cafe-accent);
+    border: 1px solid var(--cafe-accent);
+    border-radius: 3px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-button:hover {
+    background-color: var(--cafe-accent);
+    color: #fff;
+}
+
+
+/* =========================
+   Coffee Section
+========================= */
+
+.coffee-section {
+    padding: 6rem 0;
+    background-color: var(--cafe-surface);
+    text-align: center;
+}
+
+.coffee-section .container {
+    max-width: 1100px;
+}
+
+
+/* =========================
+   Find Us Section
+========================= */
+
+.find-us-section {
+    padding: 6rem 0;
+    background-color: var(--cafe-surface);
+    text-align: center;
+}
+
+.find-us-section .container {
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.find-us-section .section-heading {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.find-us-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+
+/* =========================
+   Find Us Layout
+========================= */
+
+.find-us-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+
+/* =========================
+   Find Us Image
+========================= */
+
+.find-us-image {
+    height: 260px;
+    background-color: var(--cafe-background);
+    border: 1px solid #d5d2c6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+/* =========================
+   Find Us Information
+========================= */
+
+.find-us-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.find-us-information h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.find-us-information p {
+    color: var(--cafe-muted);
+}
+
+
+/* =========================
+   Google Maps
+========================= */
+
+.find-us-map {
+    min-height: 350px;
+    background-color: var(--cafe-background);
+    border: 1px solid #d5d2c6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.find-us-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border: 0;
+}
+
+
+/* =========================
+   Modern CSS: Scroll-driven Section Scaling
+========================= */
+
+/*
+   This animation uses the view() timeline to link an
+   element's animation progress to its position in the
+   browser's viewport.
+
+   As each section enters the viewport, it gradually grows.
+   When it reaches the middle of the viewport, it reaches
+   its full size.
+
+   As the section leaves the viewport, it gradually shrinks.
+
+   Because the animation is linked to scroll progress rather
+   than time, scrolling backwards naturally reverses it.
+
+   The scale effect is deliberately subtle to avoid making
+   the page feel unstable.
+
+   Note: transform does not change the element's actual
+   layout dimensions. It changes how the element is drawn.
+*/
+
+@keyframes section-breathing {
+    0% {
+        transform: scale(0.97);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.97);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    .hero,
+    .introduction,
+    .favourites-section,
+    .coffee-section,
+    .menu-section,
+    .find-us-section {
+        animation: section-breathing linear both;
+        animation-timeline: view();
+        animation-range: cover 0% cover 100%;
+        transform-origin: center center;
+    }
+}
+
+
+/* =========================
+   Menu Section
+========================= */
+
+.menu-section {
+    padding: 5rem 0;
+    background-color: var(--cafe-background);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+    margin-top: 3rem;
+}
+
+
+/* =========================
+   Menu Categories
+========================= */
+
+.menu-category {
+    padding: 1.75rem;
+    background-color: var(--cafe-surface);
+    border-radius: 0.75rem;
+}
+
+.menu-category h3 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    color: var(--cafe-text);
+    font-family: var(--cafe-heading-font);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--cafe-accent);
+}
+
+
+/* =========================
+   Menu Items
+========================= */
+
+.menu-list {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(53 62 50 / 15%);
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.menu-item-details {
+    flex: 1;
+}
+
+.menu-item-details h4 {
+    margin-bottom: 0.25rem;
+    color: var(--cafe-text);
+    font-size: 1rem;
+}
+
+.menu-item-details p {
+    margin-bottom: 0;
+    color: var(--cafe-text);
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+.menu-price {
+    flex-shrink: 0;
+    color: var(--cafe-accent);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Responsive Menu
+========================= */
+
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .menu-category {
+        padding: 1.5rem;
+    }
+}
+
+
+/* =========================
+   Responsive Find Us
+========================= */
+
+@media (max-width: 768px) {
+    .find-us-content {
+        grid-template-columns: 1fr;
+    }
+
+    .find-us-information {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+    padding: 2rem 0;
+    background-color: var(--cafe-text);
+    color: var(--cafe-background);
+    text-align: center;
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   Accessibility
+========================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--cafe-highlight);
+    outline-offset: 4px;
+}
+
+/* =========================
+   Trade In
+========================= */
+
+.trade-in {
+    padding-block: var(--section-spacing);
+    background-color: var(--surface-secondary);
+}
+
+.trade-in h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.trade-in p:not(.eyebrow) {
+    max-width: 550px;
+    margin-bottom: 1.5rem;
+}
+
+.trade-in-image {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.trade-in-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}

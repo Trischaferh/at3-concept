@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover classic albums reissued for a new generation at The Record Room.">
+
+    <title>The Record Room | Classic Albums Reissued</title>
+
+    <!-- Theme initialisation will go here -->
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/switcher.css">
+    <link rel="stylesheet" href="../css/music.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <!-- Branding -->
+                <a href="index.html" class="navbar-brand site-logo">
+                    THE RECORD ROOM
+                </a>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation"
+                    aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse" id="main-navigation">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" aria-current="page">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="new-arrivals.html" class="nav-link">
+                                New Arrivals
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#upcoming-reissues" class="nav-link">
+                                Upcoming Reissues
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#catalogue" class="nav-link nav-inactive">
+                                Catalogue
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="theme-toggle" type="button" aria-label="Toggle dark mode"
+                                aria-pressed="false">
+                                ◐
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="switcher-button" popovertarget="site-switcher-panel">
+                                Switch Site
+                            </button>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Site Switcher Popover -->
+                <nav id="site-switcher-panel" class="switcher-panel" popover aria-label="Explore other websites">
+
+                    <p>Switch between experiences</p>
+
+                    <a href="../cafe/index.html">☕ The Daily Grind</a>
+                    <a href="../gaming/index.html">🎮 Pixel Palace</a>
+                    <a href="../music/index.html" aria-current="page">💿 The Record Room</a>
+
+                </nav>
+
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container">
+
+                <p class="eyebrow">Independent music. Timeless sound.</p>
+
+                <h1>Classic albums.<br>Reissued.</h1>
+
+                <p class="hero-description">
+                    Rediscover the albums that shaped music.
+                    Carefully selected reissues, spanning genres and generations.
+                </p>
+
+                <a href="new-arrivals.html" class="btn button">
+                    Explore new arrivals
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Featured News -->
+
+        <!-- Featured News -->
+        <section class="featured-news" id="featured-news">
+            <div class="container">
+
+                <!-- Section Heading -->
+                <div class="section-heading">
+                    <p class="eyebrow">From the record room</p>
+                    <h2>Featured story</h2>
+                </div>
+
+                <!-- Featured Article -->
+                <article class="featured-news-card">
+
+                    <!-- Article Image -->
+                    <div class="featured-news-image">
+                        <img src="../images/music/featured-news.jpg" alt="Vintage vinyl records and album sleeves">
+                    </div>
+
+                    <!-- Article Content -->
+                    <div class="featured-news-content">
+
+                        <p class="news-date">25 November 2026</p>
+
+                        <h3>The albums that changed everything</h3>
+
+                        <p>
+                            A look back at the records that shaped generations
+                            and continue to influence the music we listen to today.
+                        </p>
+
+                        <a href="#" class="news-link">Read the story</a>
+
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="new-arrivals" id="new-arrivals">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Recently added</p>
+                    <h2>Fresh off the shelves</h2>
+                    <p>Recently reissued classics and rediscovered favourites.</p>
+                </div>
+
+                <div class="row g-4 product-grid">
+
+                    <!-- ELO: Out of the Blue -->
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="product-card">
+
+                            <img src="../images/music/out-of-the-blue.jpg" alt="Out of the Blue album artwork">
+
+                            <div class="product-card-content">
+                                <h3>Out of the Blue</h3>
+                                <p>Electric Light Orchestra</p>
+                                <p class="product-price">$39.95</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <a href="album.html">View album</a>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <!-- Dio: Holy Diver -->
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="product-card">
+
+                            <img src="../images/music/holy-diver.jpg" alt="Holy Diver album artwork">
+
+                            <div class="product-card-content">
+                                <h3>Holy Diver</h3>
+                                <p>Dio</p>
+                                <p class="product-price">$36.95</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <a href="album.html">View album</a>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <!-- Slim Whitman: First Visit To Britain -->
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="product-card">
+
+                            <img src="../images/music/first-visit-to-britain.jpg"
+                                alt="First Visit To Britain album artwork">
+
+                            <div class="product-card-content">
+                                <h3>First Visit To Britain</h3>
+                                <p>Slim Whitman</p>
+                                <p class="product-price">$34.95</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <a href="album.html">View album</a>
+                            </div>
+
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="new-arrivals.html" class="btn button">
+                        View all new arrivals
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Upcoming Reissues -->
+        <section class="upcoming-reissues" id="upcoming-reissues">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Coming soon</p>
+                    <h2>On the horizon</h2>
+                    <p>A first look at the classic albums making their return.</p>
+                </div>
+
+                <div class="row g-4 upcoming-grid">
+
+
+                    <!-- Creedence Clearwater Revival -->
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="upcoming-card">
+
+                            <img src="../images/music/cosmos-factory.jpg" alt="Cosmo's Factory album artwork">
+
+                            <div class="upcoming-card-content">
+                                <p class="eyebrow">Coming soon</p>
+                                <h3>Cosmo's Factory</h3>
+                                <p>Creedence Clearwater Revival</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                                <p class="upcoming-release-date">
+                                    Expected release: February 2027
+                                </p>
+                            </div>
+
+                        </div>
+                    </article>
+
+
+                    <!-- Sam Cooke -->
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="upcoming-card">
+
+                            <img src="../images/music/twistin-the-night-away.jpg"
+                                alt="Twistin' the Night Away album artwork">
+
+                            <div class="upcoming-card-content">
+                                <p class="eyebrow">Coming soon</p>
+                                <h3>Twistin' the Night Away</h3>
+                                <p>Sam Cooke</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                                <p class="upcoming-release-date">
+                                    Expected release: March 2027
+                                </p>
+                            </div>
+
+                        </div>
+                    </article>
+
+
+                    <!-- Player -->
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="upcoming-card">
+
+                            <img src="../images/music/player.jpg" alt="Player album artwork">
+
+                            <div class="upcoming-card-content">
+                                <p class="eyebrow">Coming soon</p>
+                                <h3>Player</h3>
+                                <p>Player</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                                <p class="upcoming-release-date">
+                                    Expected release: April 2027
+                                </p>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <div class="text-center mt-4">
+                        <a href="upcoming-reissues.html" class="btn button">
+                            View all upcoming reissues
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 The Record Room. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+/* =========================
+   Site Switcher Button
+========================= */
+.switcher-button {
+    padding: 0.7rem 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #333;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.switcher-button:hover {
+    background-color: #f2f2f2;
+    border-color: #999;
+}
+
+
+/* =========================
+   Site Switcher Popover
+========================= */
+.switcher-panel {
+    position: fixed;
+    top: 5.5rem;
+    right: 1.5rem;
+    left: auto;
+    bottom: auto;
+    margin: 0;
+    width: min(300px, calc(100vw - 2rem));
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.75rem;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 10px 35px rgb(0 0 0 / 15%);
+}
+
+.switcher-panel p {
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.switcher-panel a {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 0.4rem;
+}
+
+.switcher-panel a:hover,
+.switcher-panel a:focus-visible {
+    background-color: #f2f2f2;
+}
+
+.switcher-panel a[aria-current="page"] {
+    background-color: #e9e9e9;
+    font-weight: 700;
+}
